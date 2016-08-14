@@ -6,6 +6,8 @@ server '46.101.153.245', roles: [:web, :app, :db], primary: true
 set :application,     'testapp_rails'
 set :repo_url,        'git@github.com:edenisn/testapp_rails.git'
 set :user,            'deployer'
+set :linked_files,    fetch(:linked_files, []).push('config/database.yml')
+
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
